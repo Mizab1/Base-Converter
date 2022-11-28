@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>Base System Converter</title>
+
+      <link rel="stylesheet" href="CSS_red.css">
+      <script src="CSS.js" defer></script>
+   </head>
+
+   <body>
+      
+      <!-- main frame -->
+      <main id="main" onmousemove="gradient(event)">
+         
+         <!-- header -->
+         <h1 class="heading">Base System Converter</h1>
+         
+         <!-- main window -->
+         <div id="select-container">
+
+            <!-- "from" drop-down choice -->
+            <select id="from-select" onchange="from.change()">
+               <option id="BinaryFrom"       value="from-binary"          >Binary</option>
+               <option id="DecimalFrom"      value="from-decimal" selected>Decimal</option>
+               <option id="HexadecimalFrom"  value="from-hexadecimal"     >Hexadecimal</option>
+               <option id="OctalFrom"        value="from-octal"           >Octal</option>
+            </select>
+            
+            <h3>to</h3>
+
+            <!-- "to" drop-down choice -->
+            <select id="to-select" onchange="to.change()">
+               <option id="BinaryTo"      value="to-binary"     >Binary</option>
+               <option id="DecimalTo"     value="to-decimal"    >Decimal</option>
+               <option id="HexadecimalTo" value="to-hexadecimal">Hexadecimal</option>
+               <option id="OctalTo"       value="to-octal"      >Octal</option>
+            </select>         
+            
+         </div>
+
+         <!-- input for "from" -->
+         <div id="input-container">
+            <input type="text" id="from-input" oninput="convert()">
+
+            <!-- error for invalid input -->
+            <b><span id="error"></span></b>
+         </div>
+
+         <!-- output (readonly) -->
+         <input type="text" id="to-input" readonly>
+
+         <button id="reset-button" onclick="reset()">Reset</button>
+      </main>
+   </body>
+
+</html>
